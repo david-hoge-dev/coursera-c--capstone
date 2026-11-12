@@ -1,0 +1,95 @@
+@LogiTrack_HostAddress = http://localhost:5275
+@accessToken = replace-with-token-from-login
+
+GET {{LogiTrack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{LogiTrack_HostAddress}}/api/inventory
+Accept: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+
+POST {{LogiTrack_HostAddress}}/api/inventory
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+	"name": "Packing Boxes",
+	"quantity": 50,
+	"location": "Warehouse A"
+}
+
+###
+
+GET {{LogiTrack_HostAddress}}/api/inventory/1
+Accept: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+
+DELETE {{LogiTrack_HostAddress}}/api/inventory/1
+Authorization: Bearer {{accessToken}}
+
+###
+
+DELETE {{LogiTrack_HostAddress}}/api/inventory/999999
+Authorization: Bearer {{accessToken}}
+
+###
+
+GET {{LogiTrack_HostAddress}}/api/orders
+Accept: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+
+POST {{LogiTrack_HostAddress}}/api/orders
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+	"customerName": "North Warehouse",
+	"items": [
+		{ "name": "Packing Boxes", "quantity": 50, "location": "Warehouse A" },
+		{ "name": "Safety Cones", "quantity": 24, "location": "Warehouse B" }
+	]
+}
+
+###
+
+GET {{LogiTrack_HostAddress}}/api/orders/1
+Accept: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+
+DELETE {{LogiTrack_HostAddress}}/api/orders/1
+Authorization: Bearer {{accessToken}}
+
+###
+
+GET {{LogiTrack_HostAddress}}/api/orders/999999
+Authorization: Bearer {{accessToken}}
+
+###
+
+POST {{LogiTrack_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+	"userName": "testuser",
+	"password": "Example-Password1!"
+}
+
+###
+
+POST {{LogiTrack_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+	"userName": "testuser",
+	"password": "Example-Password1!"
+}

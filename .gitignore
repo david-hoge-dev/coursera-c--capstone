@@ -1,0 +1,49 @@
+# .NET build and package output
+**/bin/
+**/obj/
+artifacts/
+packages/
+*.nupkg
+*.snupkg
+
+# IDE and user-specific settings
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Local databases and SQLite sidecars
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Local secrets and environment settings
+.env
+.env.*
+!.env.example
+secrets.json
+appsettings.Local.json
+appsettings.*.Local.json
+*.pfx
+*.p12
+*.key
+*.pem
+
+# Logs, test results, and coverage
+*.log
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+BenchmarkDotNet.Artifacts/
+
+# OS files
+.DS_Store
+Thumbs.db
